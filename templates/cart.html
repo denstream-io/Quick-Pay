@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block title %}Cart - SuperMarket{% endblock %}
+
+{% block content %}
+    <h1 class="text-center mb-4">Your Cart</h1>
+    {% if cart %}
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in cart %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>${{ item.price }}</td>
+                    <td>
+                        <form action="{{ url_for('remove_from_cart', item_id=item.id) }}" method="post">
+                            <button type="submit" class="btn btn-outline-danger btn-sm">Remove</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <h3 class="text-center mt-4">Total: ${{ total_price }}</h3>
+    <div class="d-grid gap-2 d-sm-flex justify-content-center mt-4">
+        <a href="{{ url_for('items') }}" class="btn btn-custom btn-lg me-2">Continue Shopping</a>
+        <a href="#" class="btn btn-success btn-lg">Proceed to Checkout</a>
+    </div>
+    {% else %}
+    <p class="text-center lead">Your cart is currently empty.</p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-center mt-4">
+        <a href="{{ url_for('items') }}" class="btn btn-custom btn-lg">Start Shopping</a>
+    </div>
+    {% endif %}
+{% endblock %}

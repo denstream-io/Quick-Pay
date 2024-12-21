@@ -1,5 +1,4 @@
 
-
 function domReady(fn) {
     if (
         document.readyState === "complete" ||
@@ -18,10 +17,12 @@ domReady(function () {
 
          // Send scanned data to backend
         try {
-            const [, symbol, shares, price] = decodedText.split('/');
+
+            decodedText = decodedText.split('/');
+            item_id = Number(decodedText[0]);
 
             // Redirect to form page with query parameters
-            window.location.href = `/scanned_qr?symbol=${symbol}&shares=${shares}&price=${price}`;
+            window.location.href = `/qr_cart/${item_id}`;
         } catch (error) {
             alert('Invalid QR code format!');
             console.error(error);
