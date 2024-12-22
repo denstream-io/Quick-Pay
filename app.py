@@ -162,8 +162,8 @@ def qr_cart(item_id):
         return redirect(url_for('login'))
 
 
-    # Get data from query parameters
-    # id = int(request.args.get('id', ''))
+   
+    
 
     with sqlite3.connect('app.db') as conn:
         cursor = conn.cursor()
