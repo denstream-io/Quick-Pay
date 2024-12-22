@@ -1,37 +1,50 @@
 {% extends 'layout.html' %}
 
 {% block content %}
+    <!-- Main container with padding for better spacing -->
     <div class="container py-5">
+        <!-- Row to center the registration card on the page -->
         <div class="row justify-content-center">
+            <!-- Column to control the width of the card -->
             <div class="col-md-6">
+                <!-- Card component with a shadow for visual emphasis -->
                 <div class="card shadow-sm">
+                    <!-- Card header with a centered title -->
                     <div class="card-header text-center">
                         <h4>Register</h4>
                     </div>
+
+                    <!-- Card body containing the registration form -->
                     <div class="card-body">
+                        <!-- Registration form to capture user details -->
                         <form method="POST">
-                            <!-- Username -->
+                            <!-- Username input field -->
                             <div class="mb-3">
                                 <label for="username" class="form-label">Username</label>
+                                <!-- Input field for username, required -->
                                 <input type="text" class="form-control" id="username" name="username" required>
                             </div>
 
-                            <!-- Email -->
+                            <!-- Email input field -->
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
+                                <!-- Input field for email, required and validated as email -->
                                 <input type="email" class="form-control" id="email" name="email" required>
                             </div>
 
-                            <!-- Password -->
+                            <!-- Password input field -->
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
+                                <!-- Input field for password, required -->
                                 <input type="password" class="form-control" id="password" name="password" required>
                             </div>
 
-                            <!-- Submit Button -->
+                            <!-- Submit button for the registration form -->
                             <button type="submit" class="btn btn-custom w-100">Register</button>
                         </form>
                     </div>
+
+                    <!-- Card footer with a link to the login page -->
                     <div class="card-footer text-center">
                         <p>Already have an account? <a href="{{ url_for('login') }}" class="text-primary">Login here</a></p>
                     </div>
