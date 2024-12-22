@@ -29,8 +29,8 @@ This project implements a web application using Flask and JavaScript that:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo-name.git
-   cd your-repo-name
+   git clone https://github.com/Quick-Pay.git
+   cd Quick-Pay
    ```
 
 2. Set up a virtual environment (optional but recommended):
