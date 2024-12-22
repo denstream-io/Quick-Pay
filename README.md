@@ -1,7 +1,7 @@
 # QuickPay: Revolutionizing In-Store Shopping
 
 ## Inspiration 
-Shopping should be easy and convenient. No one likes to have their receipt scrutinized after making a purchase, a common practice at large superstores and chain markets. We aim to eliminate the hassle of multiple steps and unnecessary checks. Our goal is to make the in-store shopping experience smoother, faster, and more transparent.
+Shopping should be easy and convenient. No one likes to have their receipt scrutinized after making a purchase, a common practice at large superstores and chain markets. We aim to eliminate the hassle of multiple steps and unnecessary checks. Our goal is to make the in-store shopping experience smoother, faster, and better.
 
 ## What it does
 QuickPay simplifies the shopping process by combining scanning, video conferencing, and screen sharing. No more juggling between different apps:
