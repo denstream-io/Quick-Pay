@@ -1,4 +1,4 @@
-# QR Code Scanner with Flask and Auto-Filled Form
+# Quick Pay
 
 ## Overview
 This project implements a web application using Flask and JavaScript that:
