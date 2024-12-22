@@ -8,7 +8,7 @@ This project implements a web application using Flask and JavaScript that:
 
 ### Features
 - **QR Code Scanning:** Uses `Html5Qrcode` for efficient QR code scanning.
-- **Auto-filled Form:** Automatically extracts stock symbol, number of shares, and stock price from the QR code and pre-fills the form.
+- **Auto-find Stock:** Automatically extracts stock id to find stock details.
 - **Add to Cart:** Allows users to confirm the data and add it to an in-memory cart.
 
 ---
@@ -56,73 +56,7 @@ This project implements a web application using Flask and JavaScript that:
 
 ---
 
-## File Structure
 
-```plaintext
-.
-├── app.py                # Flask backend application
-├── templates/
-│   ├── index.html        # QR code scanning page
-│   ├── scanned_qr.html    # Auto-filled form page
-├── static/               # Static files like CSS or JS
-└── README.md             # Project documentation
-```
-
----
-
-## Workflow
-
-### 1. QR Code Scanning
-- **File:** `index.html`
-- The user scans a QR code using the `Html5Qrcode` library.
-- Example QR code format: `/stock/AAPL/10/145.23`
-- The scanned data is parsed into:
-  - `symbol`: Stock symbol (e.g., `AAPL`)
-  - `shares`: Number of shares (e.g., `10`)
-  - `price`: Stock price (e.g., `145.23`)
-
-### 2. Redirect to Form Page
-- After a successful scan, the app redirects to `/scanned_qr` with the scanned values passed as query parameters.
-
-### 3. Pre-filled Form
-- **File:** `scanned_qr.html`
-- Displays the stock details (symbol, shares, price) in a read-only form.
-- The user can confirm the details and click "Add to Cart."
-
-### 4. Add to Cart
-- **Route:** `/add_to_cart`
-- The form data is submitted via a POST request.
-- The backend processes the data and adds it to an in-memory cart.
-
----
-
-## Example QR Code Data
-- Example QR code string:
-  ```
-  /stock/AAPL/10/145.23
-  ```
-  - **symbol:** `AAPL`
-  - **shares:** `10`
-  - **price:** `145.23`
-
----
-
-## Routes
-
-### `/` (GET)
-- Displays the QR code scanning page.
-
-### `/scanned_qr` (GET)
-- Redirects to the form page with pre-filled data from the QR code.
-- Query Parameters:
-  - `symbol`: Stock symbol
-  - `shares`: Number of shares
-  - `price`: Stock price
-
-### `/add_to_cart` (POST)
-- Processes the form submission and adds the data to an in-memory cart.
-
----
 
 ## Future Improvements
 - Integrate a database to store cart data persistently.
