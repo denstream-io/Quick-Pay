@@ -2,7 +2,7 @@ import sqlite3
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'  # Secret key for session management and secure cookies.
+app.secret_key = 'hsjeyrndbshjsksjdhegjsgsgsnsbsge'  # Secret key for session management and secure cookies.
 
 # Database setup
 def init_db():
