@@ -1,7 +1,9 @@
-# QuickPay: Revolutionizing In-Store 
+# QuickPay: Revolutionizing In-Store Shopping
+
 <div style="text-align: center;">
-  <img src="./static/qr_code.png" alt="Image of qr code" width="300"/>
+  <img src="./static/qr_code.png" alt="image of qr code" width="300"/>
 </div>
+
 ## Inspiration 
 Shopping should be easy and convenient. No one likes to have their receipt scrutinized after making a purchase, a common practice at large superstores and chain markets. We aim to eliminate the hassle of multiple steps and unnecessary checks. Our goal is to make the in-store shopping experience smoother, faster, and better.
 
