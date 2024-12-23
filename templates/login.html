@@ -1,31 +1,47 @@
 {% extends 'layout.html' %}
 
-{% block title %}Login - SuperMarket{% endblock %}
+{% block title %}Login - Quick Pay{% endblock %}
 
 {% block content %}
+    <!-- Center the login form on the page -->
     <div class="row justify-content-center">
+        <!-- Define the width of the login form -->
         <div class="col-md-6">
+            <!-- Card component to visually group the login form -->
             <div class="card">
+                <!-- Card header with a title and styling -->
                 <div class="card-header text-center bg-primary text-white">
-                    <h4>Login</h4>
+                    <h4>Login</h4> <!-- Login form title -->
                 </div>
+                <!-- Card body containing the login form -->
                 <div class="card-body">
+                    <!-- POST method for secure data submission -->
                     <form method="POST">
+                        <!-- Username or email input field -->
                         <div class="mb-3">
                             <label for="username_or_email" class="form-label">Username or Email</label>
                             <input type="text" class="form-control" id="username_or_email" name="username_or_email" required>
+                            <!-- `required` ensures the field must be filled -->
                         </div>
 
+                        <!-- Password input field -->
                         <div class="mb-3">
                             <label for="password" class="form-label">Password</label>
                             <input type="password" class="form-control" id="password" name="password" required>
+                            <!-- Password field with `required` for validation -->
                         </div>
 
+                        <!-- Submit button for the login form -->
                         <button type="submit" class="btn btn-custom w-100">Login</button>
+                        <!-- `w-100` ensures the button spans the full width of the container -->
                     </form>
                 </div>
+                <!-- Card footer with additional navigation -->
                 <div class="card-footer text-center">
-                    <p>Don't have an account? <a href="{{ url_for('register') }}" class="text-primary">Register here</a></p>
+                    <p>Don't have an account? 
+                        <!-- Link to the registration page -->
+                        <a href="{{ url_for('register') }}" class="text-primary">Register here</a>
+                    </p>
                 </div>
             </div>
         </div>

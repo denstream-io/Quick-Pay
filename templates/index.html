@@ -1,12 +1,16 @@
 {% extends 'layout.html' %}
 
 {% block content %}
+    <!-- Main container for the QR code scanning page -->
     <div class="container">
+        <!-- Page heading -->
         <h1>Scan QR Codes</h1>
-        <div class="section w-25 h-25 mx-auto">
-            <div id="qr-reader">
+
+        <!-- Section for the QR code scanner -->
+        <div class="section">
+            <!-- The element where the QR code scanner will be rendered -->
+            <div id="my-qr-reader">
             </div>
         </div>
     </div>
-
 {% endblock %}

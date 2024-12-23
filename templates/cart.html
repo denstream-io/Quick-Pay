@@ -1,25 +1,31 @@
 {% extends 'layout.html' %}
 
-{% block title %}Cart - SuperMarket{% endblock %}
+<!-- Define the title of the page -->
+{% block title %}Cart - Quick Pay{% endblock %}
 
 {% block content %}
+    <!-- Main heading for the cart page -->
     <h1 class="text-center mb-4">Your Cart</h1>
+
     {% if cart %}
+    <!-- Display the cart items in a table if the cart is not empty -->
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Item</th>
-                    <th>Price</th>
-                    <th>Action</th>
+                    <th>Item</th> <!-- Column for item name -->
+                    <th>Price</th> <!-- Column for item price -->
+                    <th>Action</th> <!-- Column for actions (e.g., removing an item) -->
                 </tr>
             </thead>
             <tbody>
+                <!-- Loop through each item in the cart and display its details -->
                 {% for item in cart %}
                 <tr>
-                    <td>{{ item.name }}</td>
-                    <td>${{ item.price }}</td>
+                    <td>{{ item.name }}</td> <!-- Display the item's name -->
+                    <td>${{ item.price }}</td> <!-- Display the item's price -->
                     <td>
+                        <!-- Form to remove an item from the cart -->
                         <form action="{{ url_for('remove_from_cart', item_id=item.id) }}" method="post">
                             <button type="submit" class="btn btn-outline-danger btn-sm">Remove</button>
                         </form>
@@ -29,13 +35,21 @@
             </tbody>
         </table>
     </div>
+
+    <!-- Display the total price of all items in the cart -->
     <h3 class="text-center mt-4">Total: ${{ total_price }}</h3>
+
+    <!-- Buttons for continuing shopping or proceeding to checkout -->
     <div class="d-grid gap-2 d-sm-flex justify-content-center mt-4">
         <a href="{{ url_for('items') }}" class="btn btn-custom btn-lg me-2">Continue Shopping</a>
         <a href="#" class="btn btn-success btn-lg">Proceed to Checkout</a>
     </div>
+
     {% else %}
+    <!-- Message to display if the cart is empty -->
     <p class="text-center lead">Your cart is currently empty.</p>
+
+    <!-- Button to start shopping if the cart is empty -->
     <div class="d-grid gap-2 d-sm-flex justify-content-center mt-4">
         <a href="{{ url_for('items') }}" class="btn btn-custom btn-lg">Start Shopping</a>
     </div>

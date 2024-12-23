@@ -1,16 +1,26 @@
 {% extends "layout.html" %}
 
 {% block content %}
+<!-- Main container for the available items page -->
 <div class="container mt-5">
+    <!-- Page heading -->
     <h1 class="text-center mb-4">Available Items</h1>
+
+    <!-- Row to display items in a grid layout -->
     <div class="row">
+        <!-- Loop through the items passed from the backend and display each item -->
         {% for item in items %}
         <div class="col-md-4 mb-4">
+            <!-- Card structure for each item -->
             <div class="card">
                 <div class="card-body">
+                    <!-- Display the item's name -->
                     <h5 class="card-title">{{ item.name }}</h5>
+                    <!-- Display the item's price -->
                     <p class="card-text">Price: ${{ item.price }}</p>
+                    <!-- Form to add the item to the cart -->
                     <form action="{{ url_for('add_to_cart', item_id=item.id) }}" method="post">
+                        <!-- Button to submit the form and add the item to the cart -->
                         <button type="submit" class="btn btn-primary">Add to Cart</button>
                     </form>
                 </div>
