@@ -13,8 +13,6 @@ function domReady(fn) {
 domReady(function () {
 
     function onScanSuccess(decodedText, decodeResult) {
-        alert("You Qr is : " + decodedText, decodeResult);
-
          // Send scanned data to backend
         try {
 
@@ -30,7 +28,7 @@ domReady(function () {
     }
 
     let htmlscanner = new Html5QrcodeScanner(
-        "my-qr-reader",
+        "qr-reader",
         { fps: 10, qrbos: 250 }
     );
     htmlscanner.render(onScanSuccess);
